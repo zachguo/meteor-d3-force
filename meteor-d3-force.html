@@ -1,0 +1,68 @@
+<head>
+  <title>d3test</title>
+</head>
+
+<body>
+  {{> controlpanel}}
+  {{> graphvis}}
+</body>
+
+<template name="controlpanel">
+  <div style="position:absolute;">
+    <h3>Realtime Reactive D3 Force Layout Graph Using Meteor JS (minimum example)</h3>
+    <h4>Open another browser window side-by-side to see realtime reactive updates.</h4>
+    <h4>Add few nodes and links first, or visualization won't show up.</h4>
+    <span>New Node</span>
+    <form id="newnode">
+      <input type="text" name="title" placeholder="Node title here..." />
+      <select name="nodetype" id="nodetype">
+        <option value="type1">type1</option>
+        <option value="type2">type2</option>
+      </select>
+      <button type="submit">Create node!</button>
+    </form>
+
+    <span>New Link</span>
+    <form id="newlink">
+      <select name="sourceid" id="sourceid">
+        {{#each nodes}} {{> nodeoption}} {{/each}}
+      </select>
+      <select name="targetid" id="targetid">
+        {{#each nodes}} {{> nodeoption}} {{/each}}
+      </select>
+      <select name="linktype" id="linktype">
+        <option value="type1">type1</option>
+        <option value="type2">type2</option>
+      </select>
+      <button type="submit">Create link!</button>
+    </form>
+
+    <span>Delete Link</span>
+    <form id="dellink">
+      <select name="linkitem" id="linkitem">
+        {{#each links}} {{> linkoption}} {{/each}}
+      </select>
+      <button type="submit">Delete link!</button>
+    </form>
+
+    <span>Delete Node</span>
+    <form id="delnode">
+      <select name="nodeitem" id="nodeitem">
+        {{#each nodes}} {{> nodeoption}} {{/each}}
+      </select>
+      <button type="submit">Delete node!</button>
+    </form>
+  </div>
+</template>
+
+<template name="nodeoption">
+  <option value="{{_id}}">{{_id}} - {{title}} - {{type}}</option>
+</template>
+
+<template name="linkoption">
+  <option value="{{_id}}">{{_id}} - {{source}} - {{target}} - {{type}}</option>
+</template>
+
+<template name="graphvis">
+  <svg id="graphvis"></svg>
+</template>

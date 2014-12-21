@@ -1,0 +1,27 @@
+/* CSS declarations go here */
+body {
+  background-color: #343d46;
+  color: #c0c5ce
+}
+line {
+  stroke-width: 2px;
+}
+.line-type1 {
+  stroke: #000;
+}
+.line-type2 {
+  stroke: #888;
+  stroke-dasharray: 0,2 2;
+}
+.circle-type1 {
+  fill: #000;
+}
+.circle-type2 {
+  fill: #888;
+}
+#type1 {
+  fill: #000;
+}
+#type2 {
+  fill: #888;
+}
