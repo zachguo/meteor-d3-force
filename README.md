@@ -4,7 +4,7 @@
 - directed graph with node/link types
 - zoom/pan
 - fullscreen, auto-rerender when brower window resized
-- smoothly render updates using `d3 data join` instead of `Deps.autorun`
+- smoothly render updates using `Cursor.observe` and `d3 data join` instead of `Deps.autorun`
 
 ## To run:
 - install `meteor`
