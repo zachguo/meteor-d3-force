@@ -1,4 +1,4 @@
-# Realtime Reactive D3 Force Layout Graph Using Meteor JS (minimum example)
+# Realtime Reactive D3 Force Layout Graph Using Meteor JS
 
 ## Features:
 - directed graph with node/link types
